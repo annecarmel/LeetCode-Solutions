@@ -1,25 +1,25 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int insP = m+n-1;
-        int p1 = m-1;
-        int p2 = n-1;
+        int insertPointer = m+n-1;
+        int pointerOne = m-1;
+        int pointerTwo = n-1;
 
-        while (p1>=0 && p2>=0){
-            if(nums1[p1] > nums2[p2]) {
-            nums1[insP] = nums1[p1];
-            p1--;
-            insP--;
+        while (pointerOne >= 0 && pointerTwo >=0) {
+            if (nums1[pointerOne]>nums2[pointerTwo]){
+                nums1[insertPointer] = nums1[pointerOne];
+                insertPointer--;
+                pointerOne--;
             } else {
-            nums1[insP] = nums2[p2];
-            p2--;
-            insP--;
+                nums1[insertPointer] = nums2[pointerTwo];
+                insertPointer--;
+                pointerTwo--;
             }
         }
-        while (p2 >=0){
-            nums1[insP] = nums2[p2];
-            p2--;
-            insP--;
+
+        while (pointerTwo >= 0){
+            nums1[insertPointer] = nums2[pointerTwo];
+            insertPointer--;
+            pointerTwo--;
         }
-         
     }
 }
