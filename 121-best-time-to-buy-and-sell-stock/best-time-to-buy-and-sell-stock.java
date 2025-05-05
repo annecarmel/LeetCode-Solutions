@@ -3,7 +3,7 @@ class Solution {
         int min = Integer.MAX_VALUE;
         int Profit = 0;
         for(int max : prices){
-            if(max<min){
+            if(max < min){
                 min=max;
             } else if (max - min > Profit){
                 Profit = max - min;
